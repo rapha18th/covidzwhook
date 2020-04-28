@@ -10,7 +10,12 @@ let corefetchDateUpdate = require('./handlers/core/fetchDateUpdate')
 // The keys are the name of the actions
 // The values are the handlers
 let handlers = {
-  'core/fetchPriceCryptoCurrency': corefetchPriceCryptoCurrency
+  'core/fetchSexUpdate': corefetchSexUpdate,
+  'core/fetchApiCase': corefetchApiCase,
+  'core/fetchApiDay': corefetchApiDay,
+  'core/fetchCaseProvince': corefetchCaseProvince,
+  'core/fetchUpdateSummary': corefetchUpdateSummary,
+  'core/fetchDateUpdate': corefetchDateUpdate
 }
 
 // Function that selects the appropriate handler based on the action triggered by the agent
@@ -32,7 +37,6 @@ const requestHandler = (req, res) => {
   // Build the interaction object
   let interaction = {
     action: body.result.action,
-    parameters: body.result.parameters,
     response: {}
   }
 
